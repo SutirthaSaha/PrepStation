@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_courses"
+        android:icon="@drawable/ic_course_white"
+        android:title="Courses" />
+
+    <item
+        android:id="@+id/navigation_mocktest"
+        android:icon="@drawable/ic_test_white"
+        android:title="Mock Tests" />
+
+    <item
+        android:id="@+id/navigation_placement"
+        android:icon="@drawable/ic_job_white"
+        android:title="Placement Gyan" />
+
+    <item
+        android:id="@+id/navigation_interviewquestions"
+        android:icon="@drawable/ic_test_white"
+        android:title="Interview Questions" />
+
+</menu>

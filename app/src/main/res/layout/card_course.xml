@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8sp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:id="@+id/courseCardImage"
+                android:src="@color/cardview_dark_background"
+                android:layout_alignParentTop="true"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Title"
+                android:layout_marginTop="5sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:layout_marginBottom="5sp"
+                android:id="@+id/courseCardTitle"
+                android:layout_below="@+id/courseCardImage"/>
+            <ImageView
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:layout_marginTop="15sp"
+                android:src="@drawable/ic_computer_black"
+                android:id="@+id/courseCardIcon"
+                android:layout_below="@+id/courseCardTitle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="35"
+                android:layout_toRightOf="@id/courseCardIcon"
+                android:layout_below="@id/courseCardTitle"
+                android:layout_marginTop="15sp"
+                android:layout_marginLeft="5sp"
+                android:id="@+id/courseCardVideoNumber"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+ Lectures"
+                android:layout_toRightOf="@id/courseCardVideoNumber"
+                android:layout_below="@id/courseCardTitle"
+                android:layout_marginTop="15sp"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/courseCardTitle"
+                android:text="Coming Soon"
+                android:textColor="#fff"
+                android:backgroundTint="@color/colorPrimary"
+                />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
