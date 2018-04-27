@@ -2,7 +2,9 @@ package com.example.dell.prepstation;
 
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +24,9 @@ public class InterviewQuestionsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private TabLayout tabLayoutInterview;
+    private ViewPager viewPagerInterview;
+    private ViewPagerAdapter viewPagerAdapter;
 
     public InterviewQuestionsFragment() {
         // Required empty public constructor
@@ -59,7 +63,20 @@ public class InterviewQuestionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_interview_questions, container, false);
+        View v=inflater.inflate(R.layout.fragment_interview_questions, container, false);
+        tabLayoutInterview=v.findViewById(R.id.tabLayoutInterview);
+        viewPagerInterview=v.findViewById(R.id.viewPagerInterview);
+
+        viewPagerAdapter=new ViewPagerAdapter(getChildFragmentManager());
+
+        viewPagerAdapter.addFragments(new InterviewQuesCompanyWiseFragment(),"Company Wise");
+        viewPagerAdapter.addFragments(new InterviewQuesJobWiseFragment(),"Topic Wise");
+        viewPagerAdapter.addFragments(new InterviewQuesTopicWiseFragment(),"Exam Wise");
+
+        viewPagerInterview.setAdapter(viewPagerAdapter);
+        tabLayoutInterview.setupWithViewPager(viewPagerInterview);
+
+        return v;
     }
 
 }

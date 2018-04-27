@@ -3,6 +3,7 @@ package com.example.dell.prepstation;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,7 +29,7 @@ public class TopicWiseMockFragment extends Fragment {
 
     private int[] imageDataSet={R.drawable.ic_computer_black,R.drawable.ic_computer_black,R.drawable.ic_computer_black,R.drawable.ic_computer_black,R.drawable.ic_computer_black};
     private int[] noDataSet={3,3,3,3,3};
-    private ArrayList<String> titleDataSet = new ArrayList<String>() {{ add("Cognizant"); add("TCS"); add("Capegemini");add("ITC"); add("Genpact"); add("MuSigma"); add("Bosch");add("Accenture"); add("Cisco"); add("Oracle");}};
+    private ArrayList<String> titleDataSet = new ArrayList<String>() {{ add("Quantitative"); add("Logical Reasoning"); add("Verbal Aptitude");add("C Programming"); add("Data Structure");}};
 
     private RecyclerView mockRecyclerView;
     private RecyclerView.Adapter adapter;
@@ -70,7 +71,20 @@ public class TopicWiseMockFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_topic_wise_mock, container, false);
+        View v= inflater.inflate(R.layout.fragment_topic_wise_mock, container, false);
+        mockRecyclerView=v.findViewById(R.id.mockTestTopicRecyclerView);
+        setRecyclerViewer(mockRecyclerView);
+        return v;
+    }
+
+    private void setRecyclerViewer(RecyclerView recyclerView) {
+        recyclerView.setHasFixedSize(true);
+
+        layoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+        recyclerView.setLayoutManager(layoutManager);
+
+        adapter=new MockTestCategoryAdapter(titleDataSet,imageDataSet,noDataSet);
+        recyclerView.setAdapter(adapter);
     }
 
 }

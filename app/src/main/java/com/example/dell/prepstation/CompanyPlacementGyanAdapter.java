@@ -10,10 +10,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class PlacementGyanAdapter extends RecyclerView.Adapter<PlacementGyanAdapter.MyPlacementGyanHolder> {
+public class CompanyPlacementGyanAdapter extends RecyclerView.Adapter<CompanyPlacementGyanAdapter.MyPlacementGyanHolder> {
     private ArrayList<String> titleDataSet;
 
-    public PlacementGyanAdapter(ArrayList<String> titleDataSet) {
+    public CompanyPlacementGyanAdapter(ArrayList<String> titleDataSet) {
         this.titleDataSet = titleDataSet;
     }
 
@@ -21,7 +21,7 @@ public class PlacementGyanAdapter extends RecyclerView.Adapter<PlacementGyanAdap
     @Override
     public MyPlacementGyanHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.card_placement_gyan,parent,false);
-        PlacementGyanAdapter.MyPlacementGyanHolder holder=new MyPlacementGyanHolder(view);
+        CompanyPlacementGyanAdapter.MyPlacementGyanHolder holder=new MyPlacementGyanHolder(view);
         return holder;
     }
 

@@ -3,9 +3,13 @@ package com.example.dell.prepstation;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 
 /**
@@ -22,6 +26,14 @@ public class ExamWiseMockFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private int[] imageDataSet={R.drawable.ic_computer_black,R.drawable.ic_computer_black};
+    private int[] noDataSet={3,3};
+    private ArrayList<String> titleDataSet = new ArrayList<String>() {{ add("AMCAT"); add("E-Litmus"); }};
+
+    private RecyclerView mockRecyclerView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+
 
 
     public ExamWiseMockFragment() {
@@ -59,7 +71,20 @@ public class ExamWiseMockFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_exam_wise_mock, container, false);
+        View v= inflater.inflate(R.layout.fragment_exam_wise_mock, container, false);
+        mockRecyclerView=v.findViewById(R.id.mockTestExamRecyclerView);
+        setRecyclerViewer(mockRecyclerView);
+        return v;
+    }
+
+    private void setRecyclerViewer(RecyclerView recyclerView) {
+        recyclerView.setHasFixedSize(true);
+
+        layoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+        recyclerView.setLayoutManager(layoutManager);
+
+        adapter=new MockTestCategoryAdapter(titleDataSet,imageDataSet,noDataSet);
+        recyclerView.setAdapter(adapter);
     }
 
 }

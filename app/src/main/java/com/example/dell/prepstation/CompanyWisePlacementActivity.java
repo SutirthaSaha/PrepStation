@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 public class CompanyWisePlacementActivity extends AppCompatActivity {
 
-    String toolbarTitle;
+    private String toolbarTitle;
     private TabLayout tabLayoutCompanyWisePlacement;
     private ViewPager viewPagerCompanyWisePlacement;
     private ViewPagerAdapter viewPagerAdapter;

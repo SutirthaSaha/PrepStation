@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_row="3"
-    android:layout_column="3"
+    android:orientation="vertical"
     tools:context=".HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <android.support.v7.widget.CardView
-        android:layout_alignParentTop="true"
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="YOOOOOOO0000000000000000000000000000000"
-            android:textSize="100sp"/>
-    </android.support.v7.widget.CardView>
+        android:id="@+id/homeRecyclerView"
+        ></android.support.v7.widget.RecyclerView>
 
-</GridLayout>
+</LinearLayout>

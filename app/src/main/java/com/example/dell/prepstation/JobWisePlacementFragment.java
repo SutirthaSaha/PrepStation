@@ -3,9 +3,13 @@ package com.example.dell.prepstation;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 
 /**
@@ -22,6 +26,10 @@ public class JobWisePlacementFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private ArrayList<String> titleDataSet = new ArrayList<String>() {{ add("Android\nDeveloper"); add("UI/UX Design"); add("Data Analyst");add("Web Developer"); }};
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
 
 
     public JobWisePlacementFragment() {
@@ -59,7 +67,19 @@ public class JobWisePlacementFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_job_wise_placement, container, false);
+        View v=inflater.inflate(R.layout.fragment_job_wise_placement, container, false);
+        recyclerView=v.findViewById(R.id.jobPlacementRecyclerView);
+        setRecyclerViewer(recyclerView);
+        return v;
     }
 
+    private void setRecyclerViewer(RecyclerView recyclerView) {
+        recyclerView.setHasFixedSize(true);
+
+        layoutManager=new GridLayoutManager(getContext(),2);
+        recyclerView.setLayoutManager(layoutManager);
+
+        adapter=new JobPlacementGyanAdapter(titleDataSet);
+        recyclerView.setAdapter(adapter);
+    }
 }

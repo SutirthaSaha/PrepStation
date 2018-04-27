@@ -3,22 +3,17 @@ package com.example.dell.prepstation;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link HomeFragment#newInstance} factory method to
+ * Use the {@link InterviewQuesTopicWiseFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class InterviewQuesTopicWiseFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -27,12 +22,9 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private ArrayList<String> titleDataSet = new ArrayList<String>() {{ add("Anything");add("Anything");add("Anything");add("Anything");add("Anything");add("Anything");}};
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
 
-    public HomeFragment() {
+
+    public InterviewQuesTopicWiseFragment() {
         // Required empty public constructor
     }
 
@@ -42,11 +34,11 @@ public class HomeFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment HomeFragment.
+     * @return A new instance of fragment InterviewQuesTopicWiseFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment fragment = new HomeFragment();
+    public static InterviewQuesTopicWiseFragment newInstance(String param1, String param2) {
+        InterviewQuesTopicWiseFragment fragment = new InterviewQuesTopicWiseFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,20 +59,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_home, container, false);
-        recyclerView=v.findViewById(R.id.homeRecyclerView);
-        setRecyclerViewer(recyclerView);
-        return v;
-    }
-
-    private void setRecyclerViewer(RecyclerView recyclerView) {
-        recyclerView.setHasFixedSize(true);
-
-        layoutManager=new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(layoutManager);
-
-        adapter=new CompanyPlacementGyanAdapter(titleDataSet);
-        recyclerView.setAdapter(adapter);
+        return inflater.inflate(R.layout.fragment_interview_ques_topic_wise, container, false);
     }
 
 }
