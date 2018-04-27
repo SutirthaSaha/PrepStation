@@ -1,28 +1,39 @@
 package com.example.dell.prepstation;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class CompanyWisePlacementActivity extends AppCompatActivity {
 
-    TextView tv;
     String toolbarTitle;
+    private TabLayout tabLayoutCompanyWisePlacement;
+    private ViewPager viewPagerCompanyWisePlacement;
+    private ViewPagerAdapter viewPagerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_placement_gyan);
+        setContentView(R.layout.activity_company_wise_placement_gyan);
 
-        tv=findViewById(R.id.tv);
         Intent intent = getIntent();
-        tv.setText(intent.getStringExtra("CompanyNamePlacementGyan"));
         toolbarTitle=intent.getStringExtra("CompanyNamePlacementGyan");
         getSupportActionBar().setTitle(toolbarTitle);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        tabLayoutCompanyWisePlacement=findViewById(R.id.tabLayoutCompanyWisePlacement);
+        viewPagerCompanyWisePlacement=findViewById(R.id.viewPagerCompanyWisePlacement);
+
+        viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
+        viewPagerAdapter.addFragments(new CompanyIntroductionFragment(),"Introduction");
+        viewPagerAdapter.addFragments(new CompanyStatsFragment(),"Stats");
+        viewPagerAdapter.addFragments(new CompanyHiringProcessFragment(),"Hiring Process");
+        viewPagerAdapter.addFragments(new CompanyVideosFragment(),"Videos");
+        viewPagerAdapter.addFragments(new CompanyInterviewExpFragment(),"Experience");
+        viewPagerCompanyWisePlacement.setAdapter(viewPagerAdapter);
+        tabLayoutCompanyWisePlacement.setupWithViewPager(viewPagerCompanyWisePlacement);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
