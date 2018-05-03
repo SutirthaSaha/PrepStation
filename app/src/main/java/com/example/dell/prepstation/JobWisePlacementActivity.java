@@ -13,14 +13,17 @@ public class JobWisePlacementActivity extends AppCompatActivity {
     private TabLayout tabLayoutJobWisePlacement;
     private ViewPager viewPagerJobWisePlacement;
     private ViewPagerAdapter viewPagerAdapter;
+    private android.support.v7.widget.Toolbar jobPlacementToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_wise_placement);
         Intent intent = getIntent();
         toolbarTitle=intent.getStringExtra("JobNamePlacementGyan");
-        getSupportActionBar().setTitle(toolbarTitle);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        jobPlacementToolbar=findViewById(R.id.jobPlacementToolbar);
+        jobPlacementToolbar.setTitle(toolbarTitle);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         tabLayoutJobWisePlacement=findViewById(R.id.tabLayoutJobWisePlacement);
         viewPagerJobWisePlacement=findViewById(R.id.viewPagerJobWisePlacement);

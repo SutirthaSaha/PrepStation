@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toolbar;
 
 public class CompanyWisePlacementActivity extends AppCompatActivity {
 
@@ -13,6 +14,7 @@ public class CompanyWisePlacementActivity extends AppCompatActivity {
     private TabLayout tabLayoutCompanyWisePlacement;
     private ViewPager viewPagerCompanyWisePlacement;
     private ViewPagerAdapter viewPagerAdapter;
+    private android.support.v7.widget.Toolbar companyPlacementToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,8 +22,9 @@ public class CompanyWisePlacementActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         toolbarTitle=intent.getStringExtra("CompanyNamePlacementGyan");
-        getSupportActionBar().setTitle(toolbarTitle);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        companyPlacementToolbar=findViewById(R.id.companyPlacementToolbar);
+        companyPlacementToolbar.setTitle(toolbarTitle);
+        //companyPlacementToolbar.setDisplayHomeAsUpEnabled(true);
 
         tabLayoutCompanyWisePlacement=findViewById(R.id.tabLayoutCompanyWisePlacement);
         viewPagerCompanyWisePlacement=findViewById(R.id.viewPagerCompanyWisePlacement);

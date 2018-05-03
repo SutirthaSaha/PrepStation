@@ -7,15 +7,25 @@
     android:orientation="vertical"
     tools:context=".JobWisePlacementActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/MyToolbarTheme"
+        app:popupTheme="@style/PopUpTheme"
+        android:id="@+id/jobPlacementToolbar"></android.support.v7.widget.Toolbar>
+
+
     <android.support.design.widget.TabLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tabLayoutJobWisePlacement"
-        app:tabMode="fixed"
+        app:tabMode="scrollable"
         app:tabGravity="fill"
         android:background="@color/colorSecondary"
         app:tabTextColor="#fff"
         ></android.support.design.widget.TabLayout>
+
 
     <android.support.v4.view.ViewPager
         android:layout_width="match_parent"

@@ -19,7 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".CompanyWisePlacementActivity" />
-        <activity android:name=".JobWisePlacementActivity"></activity>
+        <activity android:name=".JobWisePlacementActivity" />
+        <activity android:name=".DashboardActivity" />
+        <activity android:name=".MyProfileActivity"></activity>
     </application>
 
 </manifest>

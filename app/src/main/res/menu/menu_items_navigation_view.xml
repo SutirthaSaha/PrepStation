@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/grp1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:title="Home"
+            android:checkable="true"
+            ></item>
+        <item
+            android:id="@+id/dashboard"
+            android:title="Dashboard"
+            android:checkable="true"
+            ></item>
+        <item
+            android:id="@+id/myProfile"
+            android:title="My Profile"
+            android:checkable="true"
+            ></item>
+    </group>
+    <group
+        android:id="@+id/grp2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/upgrade"
+            android:title="Upgrade"
+            android:checkable="true"
+            ></item>
+        <item
+            android:id="@+id/support"
+            android:title="Support"
+            android:checkable="true"
+            ></item>
+        <item
+            android:id="@+id/feedback"
+            android:title="Feedback"
+            android:checkable="true"
+            ></item>
+    </group>
+    <group
+        android:id="@+id/grp3"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/contact"
+            android:title="Contact"
+            android:checkable="true"
+            ></item>
+        <item
+            android:id="@+id/signOut"
+            android:title="Sign Out"
+            android:checkable="true"
+            ></item>
+    </group>
+</menu>
